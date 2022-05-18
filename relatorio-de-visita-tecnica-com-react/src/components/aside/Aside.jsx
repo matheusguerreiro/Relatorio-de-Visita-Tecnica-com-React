@@ -13,9 +13,9 @@ const Aside = () => {
     return
   }
 
-  console.log(data)
-  console.log(plantationsData)
-  console.log(data2)
+  // console.log(data)
+  // console.log(plantationsData)
+  // console.log(data2)
 
   return (
     <aside className="aside">
