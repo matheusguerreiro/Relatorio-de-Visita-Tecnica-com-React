@@ -1,32 +1,38 @@
-// css
+// sass
 import './plantations.sass'
 
 // hook
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 
 // context
 import { DataContext } from '../../contexts/DataContext'
 import Cards from '../cards/Cards'
 
 
-const Plantations = ({plantation}) => {
+const Plantations = ({plantation, i}) => {
 
   // console.log(plantation)
 
   const {notesData} = useContext(DataContext)
+
+  const [active, setActive] = useState(i === 0)
+
+  const changeClassName = () => {
+    setActive(!active)
+  }
   
   if (!notesData) {
     return
   }
 
-  const notesPlantation = notesData.results.filter((np) => {
-    if (np.location_type === 'Plantation' && np.location.id === plantation.id) {
-      return np
+  const notesPlantationId = notesData.results.filter((npId) => {
+    if (npId.location_type === 'Plantation' && npId.location.id === plantation.id) {
+      return npId
     }
     return false
   })
 
-  // console.log(notesPlantation)
+  // console.log(notesPlantationId)
 
   return (
     <>
@@ -49,11 +55,13 @@ const Plantations = ({plantation}) => {
               <p>{plantation.harvest_prediction_date.split('-').reverse().join('/')}</p>
             </div>
           </div>
-          <div className="pb"><i className="fa-solid fa-angle-up"></i></div>
+          <div className="pb">
+            <i onClick={changeClassName} className={active ? 'fa-solid fa-angle-up' : 'fa-solid fa-angle-down'}></i>
+          </div>
         </div>
       </section>
-      {notesPlantation.reverse().map((np) => (
-        <Cards note={np} key={np.id} />
+      {active && notesPlantationId.reverse().map((npId) => (
+        <Cards note={npId} key={npId.id} />
       ))}
     </>
   )

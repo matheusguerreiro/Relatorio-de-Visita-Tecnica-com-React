@@ -1,3 +1,14 @@
+$mobile: 766px
+$tablet: 1112px
+
+@mixin mobile
+  @media (max-width: $mobile)
+    @content
+
+@mixin tablet
+  @media (max-width: $tablet)
+    @content
+  
 .cards
   background-color: white
   max-width: 380px
@@ -9,6 +20,13 @@
   padding: 12px 16px
   border: 1px solid #DFE0E7
   border-radius: 8px
+
+  @include tablet
+    min-width: 100%
+
+  @include mobile
+    width: 100%
+
   h3
     font-size: 16px
     line-height: 16px

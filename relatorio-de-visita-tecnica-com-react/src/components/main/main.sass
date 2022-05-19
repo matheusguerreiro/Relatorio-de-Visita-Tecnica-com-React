@@ -1,7 +1,29 @@
+$mobile: 766px
+$tablet: 1112px
+
+@mixin mobile
+  @media (max-width: $mobile)
+    @content
+
+@mixin tablet
+  @media (max-width: $tablet)
+    @content
+
 .main
   display: flex
   flex-direction: row
   flex: 1
   gap: 24px
   width: 1050px
+  height: auto
   margin: 0 auto
+
+  @include tablet
+    width: 704px
+
+  @include mobile
+    width: 100%
+    flex-wrap: wrap
+    padding: 0 16px
+    gap: 16px
+    

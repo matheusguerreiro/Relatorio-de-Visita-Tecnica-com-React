@@ -1,3 +1,14 @@
+$mobile: 766px
+$tablet: 1112px
+
+@mixin mobile
+  @media (max-width: $mobile)
+    @content
+
+@mixin tablet
+  @media (max-width: $tablet)
+    @content
+
 .aside
   background-color: white
   min-width: 248px
@@ -5,6 +16,11 @@
   height: fit-content
   border: 1px solid #DFE0E7
   border-radius: 8px
+  margin-top: 28px
+
+  @include mobile
+    min-width: 100%
+    margin: 0
 
   label
     font-size: 12px
@@ -55,9 +71,11 @@
         color: #798AA4
         border: 1px solid #DFE0E7
         border-radius: 16px
+        margin-right: 16px
 
       .p
         margin-top: -4px
+
         p
           font-size: 16px
           line-height: 16px

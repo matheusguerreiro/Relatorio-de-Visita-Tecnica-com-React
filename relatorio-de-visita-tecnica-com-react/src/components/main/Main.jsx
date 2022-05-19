@@ -1,4 +1,4 @@
-// css
+// sass
 import './main.sass'
 
 // components
@@ -7,6 +7,7 @@ import Article from '../article/Article'
 
 
 const Main = () => {
+  
   return (
     <div className="main">
       <Aside />

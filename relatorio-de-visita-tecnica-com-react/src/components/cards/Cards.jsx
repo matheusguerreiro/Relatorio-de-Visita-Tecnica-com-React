@@ -1,4 +1,4 @@
-// css
+// sass
 import './cards.sass'
 
 

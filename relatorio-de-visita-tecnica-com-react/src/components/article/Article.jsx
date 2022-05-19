@@ -45,8 +45,8 @@ const Article = () => {
         <Cards note={n} key={n.id} />
       )) : 'Fazenda sem anotações...'}
       <h2>Eventos dos talhões</h2>
-      {plantations ? plantations.map((p) => (
-        <Plantations plantation={p} key={p.id} />
+      {plantations ? plantations.map((p, i) => (
+        <Plantations plantation={p} key={p.id} i={i} />
       )) : 'Talhões sem eventos...'}
     </article>
   )
