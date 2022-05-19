@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      {load || notesLoad || plantationsLoad ? <Load /> : [<Header />, <Main />, <Footer />]}
+      {load || notesLoad || plantationsLoad ? <Load /> : [<Header key={0}/>, <Main key={1}/>, <Footer key={2}/>]}
     </div>
   );
 }
