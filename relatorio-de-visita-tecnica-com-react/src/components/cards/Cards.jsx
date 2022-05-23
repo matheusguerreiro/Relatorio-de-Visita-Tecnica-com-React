@@ -4,8 +4,6 @@ import './cards.sass'
 
 const Cards = ({note}) => {
   
-  // console.log(note)
-
   return (
     <div className='cards'>
       <h3><i className="fa-solid fa-pencil"></i>Anotação</h3>

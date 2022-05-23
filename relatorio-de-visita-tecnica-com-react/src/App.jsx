@@ -14,11 +14,11 @@ import {DataContext} from './contexts/DataContext'
 
 function App() {
 
-  const {load, notesLoad, plantationsLoad} = useContext(DataContext)
+  const {load, notesLoad, plantationsLoad, load2} = useContext(DataContext)
 
   return (
     <div className="App">
-      {load || notesLoad || plantationsLoad ? <Load /> : [<Header key={0}/>, <Main key={1}/>, <Footer key={2}/>]}
+        {load || notesLoad || plantationsLoad || load2 ? <Load /> : [<Header key={0}/>, <Main key={1}/>, <Footer key={2}/>]}
     </div>
   );
 }

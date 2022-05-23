@@ -1,9 +1,8 @@
-// css
+// sass
 import './aside.sass'
 
 import { DataContext } from '../../contexts/DataContext'
 import { useContext } from 'react'
-
 
 const Aside = () => {
 
@@ -13,9 +12,6 @@ const Aside = () => {
     return
   }
 
-  // console.log(data)
-  // console.log(plantationsData)
-  // console.log(data2)
 
   return (
     <aside className="aside">

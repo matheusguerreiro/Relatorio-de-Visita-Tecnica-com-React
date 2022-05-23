@@ -1,4 +1,4 @@
-// css
+// sass
 import './article.sass'
 
 // components
@@ -20,9 +20,6 @@ const Article = () => {
     return
   }
 
-  // console.log(notesData)
-  // console.log(plantationsData)
-
   const notesFarm = notesData.results.filter((e) => {
     if (e.location_type === 'Farm') {
       return e
@@ -33,10 +30,6 @@ const Article = () => {
   const plantations = plantationsData.results.filter((p) => {
     return p
   })
-
-  // console.log(notesFarm)
-  // console.log(plantations)
-  // console.log(notesPlantation)
   
   return (
     <article className="article">

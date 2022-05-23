@@ -6,12 +6,12 @@ import { useContext, useState } from 'react'
 
 // context
 import { DataContext } from '../../contexts/DataContext'
+
+// components
 import Cards from '../cards/Cards'
 
 
 const Plantations = ({plantation, i}) => {
-
-  // console.log(plantation)
 
   const {notesData} = useContext(DataContext)
 
@@ -32,7 +32,6 @@ const Plantations = ({plantation, i}) => {
     return false
   })
 
-  // console.log(notesPlantationId)
 
   return (
     <>
