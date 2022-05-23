@@ -26,10 +26,7 @@ const Plantations = ({plantation, i}) => {
   }
 
   const notesPlantationId = notesData.results.filter((npId) => {
-    if (npId.location_type === 'Plantation' && npId.location.id === plantation.id) {
-      return npId
-    }
-    return false
+    return npId.location_type === 'Plantation' && npId.location.id === plantation.id
   })
 
 

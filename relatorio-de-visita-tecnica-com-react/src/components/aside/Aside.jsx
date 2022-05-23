@@ -1,29 +1,30 @@
 // sass
 import './aside.sass'
 
+// context
 import { DataContext } from '../../contexts/DataContext'
+
+// hook
 import { useContext } from 'react'
+
 
 const Aside = () => {
 
-  const {data, plantationsData, data2} = useContext(DataContext)
+  const {data, plantationsData, rain} = useContext(DataContext)
 
-  if (!data || !plantationsData || !data2) {
+  if (!data || !plantationsData || !rain) {
     return
   }
 
 
   return (
     <aside className="aside">
-
       <div className="f">
         <label>Fazenda</label>
         <p>{data.farm.name}</p>
         <p className="t">{plantationsData.results.length} talhões</p>
       </div>
-
       <hr />
-
       <div className="dvsrup">
         <div className="dvs">
           <div className="dv">
@@ -43,7 +44,7 @@ const Aside = () => {
           <div className="u">{data.owner.initials}</div>
           <div className="p">
             <label>Pluviometria</label>
-            <p><i className="fa-solid fa-droplet"></i>{data2.rain_until_date} mm</p>
+            <p><i className="fa-solid fa-droplet"></i>{rain.rain_until_date} mm</p>
             <p className="p">Acumulado na safra</p>
           </div>
         </div>

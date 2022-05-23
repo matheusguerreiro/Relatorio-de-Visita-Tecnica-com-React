@@ -20,16 +20,11 @@ const Article = () => {
     return
   }
 
-  const notesFarm = notesData.results.filter((e) => {
-    if (e.location_type === 'Farm') {
-      return e
-    }
-    return false
+  const notesFarm = notesData.results.filter((note) => {
+    return note.location_type === 'Farm'
   })
 
-  const plantations = plantationsData.results.filter((p) => {
-    return p
-  })
+  const plantations = plantationsData.results
   
   return (
     <article className="article">

@@ -16,10 +16,10 @@ export const DataContextProvider = ({children}) => {
 
   const {data: plantationsData, load: plantationsLoad} = useFetch(`https://justcors.com/${cors}/https://farmbox.cc/api/public/technical_visit_report/plantations.json?token=${token}`)
 
-  const {data: data2, load: load2} = useFetch(`https://justcors.com/${cors}/https://farmbox.cc/api/public/technical_visit_report/farm.json?token=${token}`)
+  const {data: rain, load: rainLoad} = useFetch(`https://justcors.com/${cors}/https://farmbox.cc/api/public/technical_visit_report/farm.json?token=${token}`)
 
   return (
-    <DataContext.Provider value={{data, notesData, plantationsData, data2, load, notesLoad, plantationsLoad, load2}}>
+    <DataContext.Provider value={{data, notesData, plantationsData, rain, load, notesLoad, plantationsLoad, rainLoad}}>
       {children}
     </DataContext.Provider>
   )
